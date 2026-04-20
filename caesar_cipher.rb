@@ -13,9 +13,9 @@ end
 
 def caesar_cipher(text, key)
   (text.bytes.map do |e|
-    if e >= 65 && e <= 90
+    if e.between?(65, 90)
       constrained_shift(e, 65, 90, key)
-    elsif e >= 97 && e <= 122
+    elsif e.between?(97, 122)
       constrained_shift(e, 97, 122, key)
     else
       e
